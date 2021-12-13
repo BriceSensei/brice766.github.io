@@ -1,0 +1,78 @@
+/* -----------------------------------------------
+    Fichier CSS
+----------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    background: rgb(124, 54, 228);
+    background: linear-gradient(90deg, rgba(124, 54, 228, 1) 0%, rgba(159, 92, 195, 1) 50%, rgba(200, 0, 182, 1) 100%);
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+}
+
+select {
+    font-family: 'Anton', sans-serif;
+}
+
+#btn-submit {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.09em;
+    border-radius: 0.5rem;
+}
+
+.form-select {
+    color: #212529;
+    background-color: #ffffff87;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+}
+
+.form-label {
+    color: #ffffff;
+}
+
+.bg-light {
+    background-color: #00000030 !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(255 255 255 / 90%);
+    font-family: 'Anton', sans-serif;
+}
+
+#logo {
+    width: 2.5em;
+}
+
+footer {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+
+@media (max-width: 990px) {
+    .bg-light {
+        --bs-bg-opacity: 1;
+        background-color: transparent !important;
+    }
+
+    .navbar-light .navbar-toggler {
+        color: rgb(0 0 0);
+        border-color: rgb(0 0 0 / 51%);
+        background-color: white;
+    }
+
+    /* #row {
+        display: contents;
+    } */
+}
