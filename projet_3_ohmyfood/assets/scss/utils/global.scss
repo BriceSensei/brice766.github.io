@@ -1,0 +1,29 @@
+.hidden-link {
+    color: unset;
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.g-3 {
+    gap: 1.5rem;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+
+h4 {
+    font-weight: 900;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
