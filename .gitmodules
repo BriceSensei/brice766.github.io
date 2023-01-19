@@ -1,0 +1,6 @@
+[submodule "Booki"]
+	path = Booki
+	url = https://github.com/ChristopherVrel/Booki
+[submodule "Ohmyfood"]
+	path = Ohmyfood
+	url = https://github.com/ChristopherVrel/Ohmyfood
