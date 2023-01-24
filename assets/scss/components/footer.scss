@@ -1,0 +1,35 @@
+
+
+
+
+.footer {
+    color: $c-white;
+    background-color: $c-heavy-grey;
+    padding: 1rem 1rem 2rem 1rem;
+        
+    h3 {
+        font-family: "Shrikhand", cursive;
+        color: #ffffff;
+        margin-bottom: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.05rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+
+        a{
+            margin-bottom: 0.45rem;
+            i {
+                margin-right: 0.75rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        padding: 2rem 5rem 3rem 5rem;
+    }
+}
