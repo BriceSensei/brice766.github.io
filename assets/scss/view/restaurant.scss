@@ -1,7 +1,20 @@
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+
+$c-light-pink: #f5edff;
+$c-white: #ffffff;
+$c-heavy-grey: #353535;
+$c-grey: #eaeaea;
+$c-light-grey: #f6f6f6;
+$c-black: #000000;
+
+
 .menu-container {
     display: flex;
     flex-direction: column;
-    
+    background-color: $c-light-grey;
+
     img {
         height: 17rem;
         width: 100%;
@@ -9,6 +22,7 @@
     }
 
     .menu {
+        background-color: $c-light-grey;
         padding: 2rem .85rem 1.5rem .85rem;
         border-radius: 2rem 2rem 0 0;
         transform: translateY(-2rem);
@@ -20,6 +34,7 @@
             margin-bottom: 1.5rem;
 
             h2 {
+                font-family: $title;
                 font-weight: unset;
             }
 
@@ -27,7 +42,8 @@
                 @include heartHover();
                 font-size: 1.5rem;
                 margin-right: 1.75rem;
-                &:hover{
+
+                &:hover {
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
@@ -47,7 +63,7 @@
 
                 &:after {
                     content: "";
-                    border-bottom: 3px solid;
+                    border-bottom: 3px solid $tertiary;
                     width: 3rem;
                     height: 1px;
                     position: absolute;
@@ -60,6 +76,7 @@
                 .menu-content-card {
                     display: flex;
                     border-radius: 1.25rem;
+                    background-color: $c-light-grey;
                     transform: translateY(15px);
                     animation: menu-card 1s forwards;
                     opacity: 0;
@@ -103,15 +120,16 @@
                     }
 
                     @keyframes menu-card {
-                        from  {
+                        from {
                             transform: translateY(15px);
                         }
+
                         to {
                             opacity: 100%;
                             transform: translateY(0);
                         }
                     }
-                    
+
                     &:hover {
                         .menu-check {
                             width: 4rem;
@@ -120,6 +138,7 @@
                                 animation: check-in 1s forwards;
                                 color: $tertiary;
                             }
+
                             ::before {
                                 padding: 0.25rem;
                                 background-color: #ffffff;
@@ -137,13 +156,15 @@
                         width: 0;
                         transition: width .7s ease;
                         overflow: hidden;
-                        
+
                         i {
+                            color: $tertiary;
                             transform: rotate(90deg);
                             opacity: 0;
                             animation: check-out .8s;
 
                             &::before {
+                                background-color: $c-white;
                                 padding: 0.25rem;
                                 border-radius: 50%;
                             }
@@ -155,16 +176,19 @@
                             opacity: 0;
                             transform: rotate(90deg);
                         }
+
                         to {
                             opacity: 100%;
                             transform: rotate(360deg);
                         }
                     }
+
                     @keyframes check-out {
                         from {
                             opacity: 100%;
                             transform: rotate(360deg);
                         }
+
                         to {
                             opacity: 0;
                             transform: rotate(90deg);
@@ -192,15 +216,22 @@
                 cursor: pointer;
                 font-weight: 600;
                 padding: 1rem 3rem;
+
+                &:hover {
+                    filter: brightness(1.1);
+                    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.364)
+                }
             }
         }
     }
 
-  
 }
 
 @media screen and (min-width: 768px) {
-    flex-grow: 1;
+
+    #store .store-content .card {
+        flex: 40%!important;
+    }
 
     img {
         height: 27rem;
@@ -234,7 +265,7 @@
 
                 .menu-content-cards {
                     gap: 1rem;
-                    
+
                     .menu-content-card {
                         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
                     }
@@ -252,3 +283,4 @@
         border-radius: 2rem;
     }
 }
+

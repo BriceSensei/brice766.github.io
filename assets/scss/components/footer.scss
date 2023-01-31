@@ -1,7 +1,5 @@
 
 
-
-
 .footer {
     color: $c-white;
     background-color: $c-heavy-grey;
@@ -32,4 +30,13 @@
     .footer {
         padding: 2rem 5rem 3rem 5rem;
     }
+}
+
+
+@media only screen and (max-width: 500px) and (min-width: 10px)  {
+
+    .footer .footer-content {
+        flex-direction: column;
+    }
+
 }
