@@ -140,13 +140,65 @@ header nav #search-container form input {
   header nav #search-container {
     background-color: #eaeaea;
     width: 100%;
-    padding: 1rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    max-width: 30em;
+  }
+  header nav #search-container form {
+    margin-left: 2em;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 13px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #storeNav i {
+    margin-right: 1em;
+  }
+  #storeNav .fa-arrow-left:before {
+    margin-left: -7em;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 701px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  #storeNav i {
+    margin-right: 1em;
+  }
+  #storeNav .fa-arrow-left:before {
+    margin-left: -16em;
+  }
+}
+
+@media only screen and (max-width: 2000px) and (min-width: 1001px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -335,13 +387,65 @@ header nav #search-container form input {
   header nav #search-container {
     background-color: #eaeaea;
     width: 100%;
-    padding: 1rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    max-width: 30em;
+  }
+  header nav #search-container form {
+    margin-left: 2em;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 13px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #storeNav i {
+    margin-right: 1em;
+  }
+  #storeNav .fa-arrow-left:before {
+    margin-left: -7em;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 701px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  #storeNav i {
+    margin-right: 1em;
+  }
+  #storeNav .fa-arrow-left:before {
+    margin-left: -16em;
+  }
+}
+
+@media only screen and (max-width: 2000px) and (min-width: 1001px) {
+  #storeNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -750,10 +854,13 @@ main #store .store-content .card .card-body p {
     color: #000000;
   }
   main .jumbotron .overlay #functioning {
-    padding: 0rem 1rem 1rem 1rem !important;
+    padding: 2rem 0rem 2rem 2.5rem !important;
     background-color: white;
     border-radius: 0rem !important;
     width: 100%;
+  }
+  main .jumbotron .overlay #functioning .functioning-content {
+    width: 93%;
   }
   main .jumbotron .overlay #functioning h3 {
     padding-bottom: 1.5rem;
@@ -883,6 +990,7 @@ main #store .store-content .card .card-body p {
           animation: menu-card 1s forwards;
   opacity: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .menu-container .menu .menu-content .menu-content-cards .menu-content-card .menu-card-body {

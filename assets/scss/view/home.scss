@@ -274,10 +274,14 @@ main {
             }
 
             #functioning {
-                padding: 0rem 1rem 1rem 1rem !important;
+                padding: 2rem 0rem 2rem 2.5rem!important;
                 background-color: rgb(255, 255, 255);
                 border-radius: 0rem!important;
                 width: 100%;
+
+                .functioning-content {
+                    width: 93%;
+                }
 
                 h3{
                     padding-bottom: 1.5rem;
