@@ -14,14 +14,14 @@ const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 // ------ FORM FIELDS VALIDATION ------ //
 // NAMES CHECK (FIRST NAME AND LAST NAME)
 function checkFirstName() {
-    if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
-        firstName.parentElement.setAttribute('data-error-visible', 'true');
-        firstName.style.border = '2px solid #e54858';
-        return false;
+    if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) { // Si le champ est vide, contient moins de 2 caractères, ou ne contient pas que des lettres
+        firstName.parentElement.setAttribute('data-error-visible', 'true'); // Afficher le message d'erreur associé au champ
+        firstName.style.border = '2px solid #e54858'; // Mettre une bordure rouge autour du champ
+        return false; // Indiquer que la validation a échoué
     }
-    first.parentElement.setAttribute('data-error-visible', 'false');
-    first.style.border = 'solid #279e7a 0.19rem';
-    return true;
+    first.parentElement.setAttribute('data-error-visible', 'false'); // Masquer le message d'erreur associé au champ
+    first.style.border = 'solid #279e7a 0.19rem'; // Remettre la bordure normale autour du champ
+    return true; // Indiquer que la validation a réussi
 }
 
 function checkLastName() {
@@ -83,22 +83,23 @@ function checkLocations() {
     }
     return false;
 }
-
 // TERMS OF USE CHECK CHECK
+// Vérification de la case à cocher des conditions d'utilisation
 function checkCheckBox() {
-    if (checkbox1.checked === false) {
-        checkbox1.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
+    if (checkbox1.checked === false) { // Si la case n'est pas cochée
+        checkbox1.parentElement.setAttribute('data-error-visible', 'true'); // Ajoute un attribut 'data-error-visible' à l'élément parent de la case pour afficher un message d'erreur
+        return false; // Retourne false pour indiquer que la validation a échoué
     }
-    checkbox1.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
+    checkbox1.parentElement.setAttribute('data-error-visible', 'false'); // Si la case est cochée, supprime l'attribut 'data-error-visible' de l'élément parent pour masquer le message d'erreur
+    return true; // Retourne true pour indiquer que la validation est réussie
 }
 
 // FORM FIELDS EVENTS
+// Événements de validation des champs de formulaire
 function formFieldsValidation(element, method, event) {
-    element.addEventListener(event, method);
+    element.addEventListener(event, method); // Ajoute un écouteur d'événement à chaque élément de formulaire spécifié, avec la méthode de validation et l'événement déclencheur correspondant
 }
-formFieldsValidation(firstName, checkFirstName, 'focusout');
+formFieldsValidation(firstName, checkFirstName, 'focusout'); // l'utilisateur quitte le champ checkFirstName sera apppellée avec le 'focusout'
 formFieldsValidation(lastName, checkLastName, 'focusout');
 formFieldsValidation(email, checkEmail, 'focusout');
 formFieldsValidation(birthdate, checkBirthdate, 'focusout');
@@ -107,6 +108,7 @@ formFieldsValidation(allLocations, checkLocations, 'change');
 formFieldsValidation(checkbox1, checkCheckBox, 'change');
 
 // FOR ALL FIELDS VALIDATION
+// Validation de tous les champs de formulaire
 function forAllFieldsValidation() {
     checkFirstName()
     checkLastName()
@@ -118,6 +120,7 @@ function forAllFieldsValidation() {
 }
 
 function formValidation() {
+    // Vérification de la validité de chaque champ de formulaire
     if (checkFirstName() === true &&
         checkLastName() === true &&
         checkEmail() === true &&
@@ -125,18 +128,19 @@ function formValidation() {
         checkTournamentsQuantity() === true &&
         checkLocations() === true &&
         checkCheckBox() === true) {
-        return true;
+        return true; // Si tous les champs sont valides, retourne true pour indiquer que la validation est réussie
     }
-    return false;
+    return false; // Sinon, retourne false pour indiquer que la validation a échoué
 }
 
 // SEND FORM
+// Envoi du formulaire
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (formValidation() == true) {
-        displayModalSubmit();
-        document.querySelector('form').reset();
+    e.preventDefault(); // Empêche la soumission du formulaire par défaut
+    if (formValidation() == true) { // Vérifie si la validation du formulaire est réussie
+        displayModalSubmit(); // Affiche une fenêtre modale de confirmation
+        document.querySelector('form').reset(); // Réinitialise le formulaire
     } else {
-        forAllFieldsValidation();
+        forAllFieldsValidation(); // Si la validation a échoué, exécute la validation de tous les champs de formulaire pour afficher les messages d'erreur
     }
 });

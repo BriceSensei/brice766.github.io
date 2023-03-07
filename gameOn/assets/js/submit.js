@@ -6,13 +6,14 @@ const closeBtnConfirmation = document.getElementById('close-btn-confirmation');
 // ------ SUBMITTED CONFIRMATION ------ //
 // DISPLAY MODAL SUBMIT
 function displayModalSubmit() {
-    modalbg.style.display = 'none';
-    modalSubmit[0].style.display = 'block';
+    modalbg.style.display = 'none';// Cacher le modal précédent
+    modalSubmit[0].style.display = 'block'; // Afficher le modal de confirmation
 }
 
 // CLOSE SUBMIT
 function closeSubmit() {
-    modalSubmit[0].style.display = 'none';
+    modalSubmit[0].style.display = 'none';// Cacher le modal de confirmation
+    // Remettre les bordures des champs à leur état initial
     first.style.border = 'none';
     last.style.border = 'none';
     email.style.border = 'none';
