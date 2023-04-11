@@ -84,7 +84,6 @@ function checkLocations() {
     return false;
 }
 // TERMS OF USE CHECK CHECK
-// Vérification de la case à cocher des conditions d'utilisation
 function checkCheckBox() {
     if (checkbox1.checked === false) { // Si la case n'est pas cochée
         checkbox1.parentElement.setAttribute('data-error-visible', 'true'); // Ajoute un attribut 'data-error-visible' à l'élément parent de la case pour afficher un message d'erreur
