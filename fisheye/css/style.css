@@ -1,308 +1,343 @@
 @import url("photographer.css");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width:1400px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1400px;
+}
 
 body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
 }
 
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
 }
 
 h1 {
-    color: #901C1C;
-    margin-right: 100px;
+  color: #901C1C;
+  margin-right: 100px;
 }
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
+  height: 50px;
+  margin-left: 100px;
 }
 
 .photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 100px;
-    width: 90%;
-    max-width: 1240px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+  width: 90%;
+  max-width: 1240px;
 }
 
 .photographer_section article {
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
-    font-size: 25px;
-    margin-bottom: 0;
+  color: #D3573C;
+  font-size: 25px;
+  margin-bottom: 0;
 }
 
 .photographer_section article img {
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    object-fit: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+  transform: scale(1.5) translateY(6%);
+  transition: transform 0.28s ease;
+}
+
+.image-container {
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.image-container:hover img {
+  transform: scale(1.3) translateY(0);
 }
 
 .photographer_section article p {
-    margin: 5px;
-    color: #901c1c;
-    font-size: 13px;
+  margin: 5px;
+  color: #901c1c;
+  font-size: 13px;
 }
 
 .photographer_section article .tagline {
-    color: #000;
-    font-size: 11px;
-    margin: 0;
+  color: #000;
+  font-size: 11px;
+  margin: 0;
 }
 
 .photographer_section article .price {
-    color: #757575;
-    font-size: 12px;
-    margin-top: 4px;
+  color: #757575;
+  font-size: 12px;
+  margin-top: 4px;
 }
+
 /*jusqu'à cette ligne, nous avons stylisé la page index.html telle qu'elle apparaît dans figma.*/
 
 .photograph-header {
-    background-color: #FAFAFA;
-    width: 90%;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px 0 30px;
-    align-items: center;
-    max-width: 1240px;
-  }
+  background-color: #FAFAFA;
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  align-items: center;
+  max-width: 1240px;
+}
 
-  #photograph-img {
-    display: block;
-    margin: 0 auto;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    object-fit: cover;
-  }
+#photograph-img {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
 
-  #photograph-name {
-    color: #d3573c;
-    font-size: 35px;
-    margin-bottom: 0;
-  }
+#photograph-name {
+  color: #d3573c;
+  font-size: 35px;
+  margin-bottom: 0;
+}
 
+#photograph-city {
+  display: block;
+  color: #901c1c;
+  font-size: 13px;
+}
+
+@media screen and (min-width: 10px) and (max-width: 450px) {
   #photograph-city {
-    display: block;
-    color: #901c1c;
-    font-size: 13px;
+    font-size: 15px;
   }
+}
 
-  #photograph-tagline {
-    display: block;
-    color: #757575;
-    font-size: 14px;
-    margin-top: 4px;
-  }
+#photograph-tagline {
+  display: block;
+  color: #757575;
+  font-size: 14px;
+  margin-top: 4px;
+}
 
-  #main {
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* de la ligne 80 à 123 style du HEADER de la page de chaque photographe*/
+
+.photographer-medias {
+  width: 90%;
+  max-width: 1240px;
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.photograph-media-item {
+  width: 350px;
+  height: 350px;
+}
+
+.photograph-media-item img,
+.photograph-media-item video {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/*organiser le style du travail de chaque photographe */
+
+.titleMedia {
+  color: #901C1C;
+  font-size: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: left;
+  padding: 20px 0;
+  width: 90%;
+}
+
+.filters p {
+  text-align: left;
+  margin-right: 20px;
+}
+
+.filters select {
+  background-color: #901C1C;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+/* style de l´information de chaque media*/
+
+.photograph-media-item_bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.fa-solid,
+.fas {
+  color: #901C1C;
+  padding-top: 8px;
+}
+
+.photograph-media-item_bottom-likes {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  color: #901c1c;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.photograph-media-item_bottom div {
+  display: flex;
+}
+
+/*donner du style au Rectangle total likes */
+
+.sum-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 34px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  border-radius: 5px 5px 0 0;
+  width: 376px;
+  height: 60px;
+  background-color: #db8876;
+  color: #000000;
+}
+
+#photograph-infos-price {
+  color: #000000;
+  font-size: 20px;
+}
+
+#photograph-infos-likes {
+  color: #000000;
+  font-size: 20px;
+}
+
+#photograph-infos-likes .fa-solid,
+.fas {
+  color: #000000;
+}
+
+/* Style du lightbox*/
+.media-modal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #901c1c;
+  width: 100%;
+  height: 100%;
+}
+
+.media-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.media-modal-img-container {
+  position: relative;
+}
+
+.media-modal-img {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-modal-title {
+  font-size: 18px;
+}
+
+.media-modal-close {
+  position: absolute;
+  font-size: 3.5em;
+  top: -27px;
+  right: -38px;
+}
+
+.media-modal .prev {
+  left: -38px;
+}
+
+.media-modal .next {
+  right: -38px;
+}
+
+.media-modal .prev,
+.media-modal .next {
+  position: absolute;
+  font-size: 2.2em;
+  margin: 5px;
+  top: 50%;
+}
+
+.media-modal .prev,
+.media-modal .next,
+.media-modal-close {
+  cursor: pointer;
+}
+
+.media-modal img,
+.media-modal video {
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.25em;
+}
+
+
+
+/* media query  */
+
+
+@media screen and (min-width: 10px) and (max-width: 450px) {
+  .photographer_section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
   }
-
-  /* de la ligne 80 à 123 style du HEADER de la page de chaque photographe*/
-
-  .photographer-medias {
-    width: 90%;
-    max-width: 1240px;
-    padding-top: 35px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .photograph-media-item {
-    width: 350px;
-    height: 350px;
-  }
-
-  .photograph-media-item img,
-  .photograph-media-item video {
-    width: 350px;
-    height: 300px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-
-  /* de la ligne 128 à 148 organiser le style du travail de chaque photographe */
-
-  .titleMedia {
-      color: #901C1C;
-    font-size: 20px;
-  }
-
-  .filters {
-    display: flex;
-    justify-content: left;
-    padding: 20px 0;
-    width: 90%;
-  }
-
-  .filters p{
-    text-align: left;
-    margin-right: 20px;
-  }
-
-  .filters select {
-    background-color: #901C1C;
-    color: white;
-    border: 0;
-    border-radius: 3px;
-    padding: 10px;
-  }
-
-  /* a partir de la ligne 178 ; style de l´information de chaque media*/
-
-  .photograph-media-item_bottom{
-    display: flex;
-    justify-content: space-between;
-    width: 350px;
-  }
-
-  .fa-solid, .fas {
-    color: #901C1C;
-    padding-top: 8px;
-  }
-
-  .photograph-media-item_bottom-likes {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    color: #901c1c;
-    font-size: 20px;
-    margin-right: 10px;
-  }
-
-  .photograph-media-item_bottom div {
-    display: flex;
-  }
-
-  /* a partir de la ligne 204 donner du style au Rectangle total likes */
-
-  .sum-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 34px;
-    position: fixed;
-    bottom: 0;
-    right: 50px;
-    border-radius: 5px 5px 0 0;
-    width: 376px;
-    height: 60px;
-    background-color: #db8876;
-    color: #000000;
-  }
-
-  #photograph-infos-price {
-    color: #000000;
-    font-size: 20px;
-  }
-
-  #photograph-infos-likes {
-    color: #000000;
-    font-size: 20px;
-  }
-
-  #photograph-infos-likes .fa-solid, .fas{
-    color: #000000;
-  }
-
-  /* Style du lightbox*/
-  .media-modal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #901c1c;
-    width: 100%;
-    height: 100%;
-  }
-
-  .media-modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .media-modal-img-container {
-    position: relative;
-  }
-
-  .media-modal-img {
-    width: 65%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .media-modal-title {
-    font-size: 18px;
-  }
-
-  .media-modal-close {
-    position: absolute;
-    font-size: 3.5em;
-    top: -27px;
-    right: -38px;
-  }
-
-  .media-modal .prev {
-    left: -38px;
-  }
-  .media-modal .next {
-    right: -38px;
-  }
-
-  .media-modal .prev,
-  .media-modal .next {
-    position: absolute;
-    font-size: 2.2em;
-    margin: 5px;
-    top: 50%;
-  }
-
-  .media-modal .prev,
-  .media-modal .next,
-  .media-modal-close {
-    cursor: pointer;
-  }
-
-  .media-modal img,
-  .media-modal video {
-    max-height: 80vh;
-    width: 100%;
-    object-fit: contain;
-    border-radius: 0.25em;
-  }
+}

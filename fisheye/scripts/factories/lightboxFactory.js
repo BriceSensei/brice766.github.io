@@ -1,11 +1,14 @@
-
+// Variable pour stocker l'ID du média actuel dans la lightbox
 let actualMediaId;
 
+// Fonction pour mettre à jour la lightbox avec les détails du média
 function setMediaModal(mediaId, mediaType, mediaUrl, mediaTitle){
+  // Sélection des éléments DOM pour la lightbox
   let modalImgElement = document.querySelector(".media-modal-img img");
   let modalVideoElement = document.querySelector(".media-modal-img video");
-
   const modalTitleElement = document.querySelector(".media-modal-title p");
+
+  // Mise à jour des éléments DOM avec les détails du média
   modalTitleElement.textContent = mediaTitle;
 
   switch (mediaType) {
@@ -32,16 +35,19 @@ function setMediaModal(mediaId, mediaType, mediaUrl, mediaTitle){
   actualMediaId = mediaId;
 }
 
+// Fonction pour naviguer entre les médias dans la lightbox
 function mediaModalSlide(slideAction){
 
-    /* l'obtention du chemin de photographerId, media*/
-    getNextAssetPath = (photographerId, media) =>
+  // Fonction pour obtenir le chemin de l'asset du média
+  getNextAssetPath = (photographerId, media) =>
     `assets/photographers/${photographerId}/${media}`;
 
+  // Obtenir l'index du média actuel dans le tableau des médias du photographe
   const actualMediaIndex = photographer.medias.findIndex((media) => {
     if (media.id === actualMediaId) return true;
   });
 
+  // Fonction pour afficher le prochain média dans la lightbox
   function nextSlide() {
     const nextMediaIndex = actualMediaIndex + 1;
 
@@ -59,6 +65,7 @@ function mediaModalSlide(slideAction){
     setMediaModal(nextMedia.id, nextMediaType, nextMediaUrl, nextMedia.title);
   }
 
+  // Fonction pour afficher le média précédent dans la lightbox
   function prevSlide() {
     const prevMediaIndex = actualMediaIndex - 1;
 
@@ -77,6 +84,7 @@ function mediaModalSlide(slideAction){
     setMediaModal(nextMedia.id, nextMediaType, nextMediaUrl, nextMedia.title);
   }
 
+  // Vérification de l'action de diapositive demandée
   if (slideAction) {
     switch (slideAction) {
       case -1:
@@ -89,25 +97,32 @@ function mediaModalSlide(slideAction){
   }
 }
 
-// l'événement pour la navigation lightbox avec les flèches du clavier
 
+// Écouteur d'événement pour la navigation du lightbox avec les flèches du clavier
 document.addEventListener("keydown", (event) =>{
-    const isMediaModalActive = () => mediaModal.style.display !== "none";
-    const key = event.key;
+  // Fonction pour vérifier si le lightbox est actif
+  const isMediaModalActive = () => mediaModal.style.display !== "none";
+  // Récupération de la touche du clavier pressée
+  const key = event.key;
 
-    if (isMediaModalActive) {
-        switch (key) {
-          case "ArrowRight":
-            mediaModalSlide(1);
-            break;
-          case "ArrowLeft":
-            mediaModalSlide(-1);
-            break;
-          case "Escape":
-            closeMediaModal();
-            closeContactModal();
-            break;
-          default:
-        }
-      }
+  if (isMediaModalActive) {
+    // Si le lightbox est actif, on vérifie quelle touche a été pressée
+    switch (key) {
+      case "ArrowRight":
+        // Si c'est la flèche droite, on appelle la fonction mediaModalSlide avec un argument de 1 pour passer à la media suivant
+        mediaModalSlide(1);
+        break;
+      case "ArrowLeft":
+        // Si c'est la flèche gauche, on appelle la fonction mediaModalSlide avec un argument de -1 pour passer à la media précédent
+        mediaModalSlide(-1);
+        break;
+      case "Escape":
+        // Si c'est la touche d'échappement (Escape), on appelle les fonctions closeMediaModal et closeContactModal pour fermer le lightbox et le formulaire de contact (si ouvert)
+        closeMediaModal();
+        closeContactModal();
+        break;
+      default:
+        // Si aucune des touches spécifiées n'est pressée, ne rien faire
+    }
+  }
 });
