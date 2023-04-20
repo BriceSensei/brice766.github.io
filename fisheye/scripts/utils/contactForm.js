@@ -25,6 +25,8 @@ async function displayModal(){
   inputPrenom.setAttribute("tabindex", `${indexNumber += 1}`)
   inputPrenom.setAttribute("type", "text");
   inputPrenom.setAttribute("id", "prenom");
+  inputPrenom.setAttribute("aria-label", "Prénom");
+  inputPrenom.setAttribute("aria-required", "true");
   const errorPrenom = document.createElement("span");
   errorPrenom.setAttribute("id", "prenom_error");
   errorPrenom.style.color = "red";
@@ -39,6 +41,8 @@ async function displayModal(){
   inputNom.setAttribute("tabindex", `${indexNumber += 1}`)
   inputNom.setAttribute("type", "text");
   inputNom.setAttribute("id", "nom");
+  inputNom.setAttribute("aria-label", "Nom");
+inputNom.setAttribute("aria-required", "true");
   const errorNom = document.createElement("span");
   errorNom.setAttribute("id", "nom_error");
   errorNom.style.color = "red";
@@ -53,6 +57,8 @@ async function displayModal(){
   inputEmail.setAttribute("tabindex", `${indexNumber += 1}`)
   inputEmail.setAttribute("type", "email");
   inputEmail.setAttribute("id", "email");
+  inputEmail.setAttribute("aria-label", "Email");
+  inputEmail.setAttribute("aria-required", "true");
   const errorEmail = document.createElement("span");
   errorEmail.setAttribute("id", "email_error");
   errorEmail.style.color = "red";
@@ -68,6 +74,8 @@ async function displayModal(){
   textarea.setAttribute("tabindex", `${indexNumber += 1}`)
   textarea.setAttribute("rows", "5");
   textarea.setAttribute("id", "message");
+  textarea.setAttribute("aria-label", "Message");
+  textarea.setAttribute("aria-required", "true");
   const errorMessage = document.createElement("span");
   errorMessage.setAttribute("id", "message_error");
   errorMessage.style.color = "red";

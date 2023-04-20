@@ -84,6 +84,8 @@ function mediaModalSlide(slideAction){
     setMediaModal(nextMedia.id, nextMediaType, nextMediaUrl, nextMedia.title);
   }
 
+
+  
   // Vérification de l'action de diapositive demandée
   if (slideAction) {
     switch (slideAction) {
@@ -96,6 +98,7 @@ function mediaModalSlide(slideAction){
     }
   }
 }
+
 
 
 // Écouteur d'événement pour la navigation du lightbox avec les flèches du clavier
@@ -119,7 +122,7 @@ document.addEventListener("keydown", (event) =>{
       case "Escape":
         // Si c'est la touche d'échappement (Escape), on appelle les fonctions closeMediaModal et closeContactModal pour fermer le lightbox et le formulaire de contact (si ouvert)
         closeMediaModal();
-        closeContactModal();
+        closeModal();
         break;
       default:
         // Si aucune des touches spécifiées n'est pressée, ne rien faire
